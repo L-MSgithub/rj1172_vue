@@ -1,5 +1,5 @@
 <template>
-    <el-container router>
+    <el-container>
         <el-header>
             <el-row type="flex" justify="space-between">
                 <h3>广东海洋大学体育馆管理系统</h3>
@@ -38,7 +38,7 @@
                             <i class="el-icon-setting"></i>
                             <span slot="title">器材管理</span>
                         </template>
-                        <el-menu-item v-for="item in $router.options.routes[2].children" :index="item.path" :class="$route.path===item.path?'is-active':''">{{item.name}}</el-menu-item>
+                        <router-link to="/equipmentadd"><el-menu-item v-for="item in $router.options.routes[2].children" :index="item.path">{{item.name}}</el-menu-item></router-link>
                     </el-submenu>
                 </el-menu>
             </el-col>
@@ -81,7 +81,6 @@
     }
 
     .el-main{
-        background-color: aliceblue;
         border-radius: 5px;
         height: 150px;
     }
