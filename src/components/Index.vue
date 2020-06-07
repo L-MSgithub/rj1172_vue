@@ -38,7 +38,7 @@
                             <i class="el-icon-setting"></i>
                             <span slot="title">器材管理</span>
                         </template>
-                        <router-link to="/equipmentadd"><el-menu-item v-for="item in $router.options.routes[2].children" :index="item.path">{{item.name}}</el-menu-item></router-link>
+                        <el-menu-item v-for="item in $router.options.routes[2].children" :index="item.path"><router-link :to="item.path">{{item.name}}</router-link></el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-col>
@@ -87,5 +87,10 @@
 
     .el-row{
         color: white;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
     }
 </style>
