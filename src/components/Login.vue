@@ -29,10 +29,11 @@
                 const url = "http://localhost:8181/user/login";
                 axios.get(url, {params:{username:this.user.username,password:this.user.password}})
                     .then(resp=> {
-                        console.log(resp.data);
                         if(resp.data == "success"){
                             this.dialogFormVisible = false;
                             this.$message.success("登录成功!")
+                            let user = JSON.stringify(this.user);
+                            window.sessionStorage.setItem("user", user);
                             this.$router.push("/index")
                         }
                         else{
