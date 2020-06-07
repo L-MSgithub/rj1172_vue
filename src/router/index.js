@@ -19,16 +19,50 @@ const routes = [
   {
     path:'/index',
     name:'index',
-    component: Index
-  },
-  {
-    path:'/equipmentadd',
-    name:'equipmentadd',
-    component: EquipmentAdd
+    component: Index,
+    children:[
+      {
+        path:'/equipmentadd',
+        name:'购置新增',
+        component: EquipmentAdd
+      },
+      {
+        path:'/equipmentfix',
+        name:'维护保修',
+        component: EquipmentAdd
+      },
+      {
+        path:'/equipmentdelete',
+        name:'报废删除',
+        component: EquipmentAdd
+      },
+      {
+        path:'/equipmentquery',
+        name:'查询',
+        component: EquipmentAdd
+      },
+      {
+        path:'/equipmentrent',
+        name:'租用',
+        component: EquipmentAdd
+      },
+      {
+        path:'/equipmentreturn',
+        name:'回收',
+        component: EquipmentAdd
+      },
+      {
+        path:'/equipmentstandard',
+        name:'租用消费标准',
+        component: EquipmentAdd
+      },
+    ]
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 

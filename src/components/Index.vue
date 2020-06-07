@@ -1,5 +1,5 @@
 <template>
-    <el-container>
+    <el-container router>
         <el-header>
             <el-row type="flex" justify="space-between">
                 <h3>广东海洋大学体育馆管理系统</h3>
@@ -38,13 +38,7 @@
                             <i class="el-icon-setting"></i>
                             <span slot="title">器材管理</span>
                         </template>
-                        <el-menu-item index="4-1">购置新增</el-menu-item>
-                        <el-menu-item index="4-2">维护保修</el-menu-item>
-                        <el-menu-item index="4-3">报废删除</el-menu-item>
-                        <el-menu-item index="4-4">查询</el-menu-item>
-                        <el-menu-item index="4-5">租用</el-menu-item>
-                        <el-menu-item index="4-6">回收</el-menu-item>
-                        <el-menu-item index="4-7">租用消费标准</el-menu-item>
+                        <el-menu-item v-for="item in $router.options.routes[2].children" :index="item.path" :class="$route.path===item.path?'is-active':''">{{item.name}}</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-col>
@@ -63,9 +57,6 @@
             }
         },
         methods: {
-            handleSelect(key, keyPath) {
-
-            },
             handleOpen(key, keyPath) {
 
             },
