@@ -75,14 +75,14 @@
     }
 
     .el-aside{
-        background-color: #409EFF;
         border-radius: 5px;
         height: 150px;
     }
 
     .el-main{
+        background-color: aliceblue;
         border-radius: 5px;
-        height: 150px;
+        height: 600px;
     }
 
     .el-row{
