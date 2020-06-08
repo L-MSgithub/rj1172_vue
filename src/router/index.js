@@ -9,6 +9,12 @@ import EquipmentDelete from "../components/EquipmentDelete";
 import EquipmentFix from "../components/EquipmentFix";
 import EquipmentReturn from "../components/EquipmentReturn";
 import EquipmentStandard from "../components/EquipmentStandard";
+import PlaceAdd from "../components/PlaceAdd";
+import PlaceDelete from "../components/PlaceDelete";
+import PlaceOrder from "../components/PlaceOrder";
+import PlaceOrderMsg from "../components/PlaceOrderMsg";
+import QueryWeekMsg from "../components/QueryWeekMsg";
+import PlaceNews from "../components/PlaceNews";
 
 Vue.use(VueRouter)
 
@@ -62,8 +68,51 @@ const routes = [
         name:'租用消费标准',
         component: EquipmentStandard
       },
+    ],
+  },
+  {
+    path:'/index',
+    name:'index',
+    component: Index,
+    children:[
+      {
+        path:'/placeadd',
+        name:'新增场地',
+        component: PlaceAdd
+      },
+      {
+        path:'/placedelete',
+        name:'删除场地',
+        component: PlaceDelete
+      },
+      {
+        path:'/placeorder',
+        name:'场地预约',
+        component: PlaceOrder
+      },
+      {
+        path:'/placeordermsg',
+        name:'预约信息',
+        component: PlaceOrderMsg
+      },
+      {
+        path:'/queryweekmsg',
+        name:'一周信息',
+        component: QueryWeekMsg
+      },
     ]
-  }
+  },
+  {
+    path:'/index',
+    name:'index',
+    component: Index,
+    children:[{
+      path:'/placenews',
+      name:'场地信息',
+      component: PlaceNews
+    }]
+  },
+
 ]
 
 const router = new VueRouter({
